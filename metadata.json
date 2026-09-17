@@ -1,0 +1,6 @@
+{
+  "name": "ArchSketch 360",
+  "description": "Architectural 2D floor plan editor with Google Cloud sign-in and AutoSave, graphic import (PNG/JPG/SVG), MS Word style File and New File document manager, circular and custom room drawing, 360-degree free rotation, print studio, and multi-format export.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

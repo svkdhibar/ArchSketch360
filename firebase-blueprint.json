@@ -1,0 +1,55 @@
+{
+  "entities": {
+    "Project": {
+      "title": "Project",
+      "description": "Architectural floor plan document saved to the cloud by an authenticated user.",
+      "type": "object",
+      "properties": {
+        "id": {
+          "type": "string",
+          "description": "Unique identifier of the project document.",
+          "maxLength": 128,
+          "pattern": "^[a-zA-Z0-9_\\-]+$"
+        },
+        "userId": {
+          "type": "string",
+          "description": "UID of the owner.",
+          "maxLength": 128,
+          "pattern": "^[a-zA-Z0-9_\\-]+$"
+        },
+        "title": {
+          "type": "string",
+          "description": "Title or name of the floor plan project.",
+          "maxLength": 120,
+          "minLength": 1
+        },
+        "objectCount": {
+          "type": "number",
+          "description": "Count of architectural elements."
+        },
+        "objects": {
+          "type": "array",
+          "description": "Array of architectural CAD objects.",
+          "maxLength": 500
+        },
+        "updatedAt": {
+          "type": "string",
+          "description": "ISO timestamp of last update.",
+          "maxLength": 64
+        },
+        "createdAt": {
+          "type": "string",
+          "description": "ISO timestamp of creation.",
+          "maxLength": 64
+        }
+      },
+      "required": ["id", "userId", "title", "objectCount", "objects", "updatedAt", "createdAt"]
+    }
+  },
+  "firestore": {
+    "/users/{userId}/projects/{projectId}": {
+      "schema": "Project",
+      "description": "Collection of cloud-saved floor plan projects owned by a user."
+    }
+  }
+}
